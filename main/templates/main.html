@@ -50,7 +50,6 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
                     </div>
                 </div>
             </div>
@@ -58,6 +57,7 @@
     </table>
     
     {% endfor %}
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
 <h5>Sesi terakhir login: {{ last_login }}</h5>
 <br />
 
@@ -102,9 +102,9 @@
         }).then(refreshProducts)
 
         document.getElementById("form").reset()
-        document.getElementById("button_add").onclick = addProduct
         return false
     }
+    document.getElementById("button_add").onclick = addProduct
 </script>
 
 
